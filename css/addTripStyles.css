@@ -135,3 +135,79 @@ main-container legend{
     padding: 30px;
 }
 
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "sidebar"
+            "main";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .sidebar-section {
+        padding: 1.5rem;
+    }
+
+    .sidebar-section h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .sidebar-section p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-section .note {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .main-container {
+        padding: 1.5rem;
+        
+    }
+
+    .main-logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .heading p {
+        font-size: 1.2rem;
+    }
+
+    .question p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    #dynamic-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .submit {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .main-logo,
+    .heading,
+    .question {
+        padding-left: 0;
+    }
+
+    .main-logo h1,
+    .heading p,
+    .question p {
+        padding-left: 0;
+        margin-left: 0;
+    }
+}

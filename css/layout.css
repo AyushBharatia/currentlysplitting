@@ -30,64 +30,6 @@ body{
     
 }
 
-.main-container{
-    display: none;
-    grid-area: main;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 80%;
-}
-
-.main-logo{
-    padding-left: 100px;
-    margin-bottom: 20px;
-}
-
-.heading{
-    padding-left: 100px;
-    margin-bottom: 10px;
-    font-size: 30px;
-    color: var(--lightpurple);
-}
-
-.question{
-    padding-left: 100px;
-}
-
-.question p{
-    max-width: 60%;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-main-container form{
-    padding-top: 20px;
-}
-
-main-container legend{
-    margin-bottom: 10px;
-}
-
-.main-container input{
-    width: 80%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    margin-top: 10px;
-}
-
-.main-container button{
-    margin-top: 30px;
-    width: 80%;
-    padding: 20px;
-    color: white;
-    background-color: var(--purple);
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
 /* Navbar Section CSS */
 
 .navbar-container{
@@ -137,6 +79,11 @@ main-container legend{
     text-transform: capitalize;
 }
 
+.navbar-left img {
+    max-height: 50px; 
+    width: auto; 
+    margin-right: 10px;
+}
 
 .button{
     display: inline-block;
@@ -163,6 +110,10 @@ main-container legend{
     transform: translateY(-1px); 
     background-color: var(--accent-color);
     border-radius: 50px;
+}
+
+.navbar-left .nav-links a:hover, .user a:hover{
+    color: #6A37FF;
 }
 
 .user a{
@@ -212,253 +163,6 @@ main-container legend{
     font-size: 0.9rem;
 }
 
-.progress-tracker {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    padding-left: 20px; /* Space for progress bar */
-}
-
-.progress-tracker::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #ddd;
-    z-index: 0;
-    border-radius: 2px;
-}
-
-.progress-tracker li {
-    position: relative;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    z-index: 1;
-    color: #fff; /* Adjust for readability */
-}
-
-.progress-tracker li.completed::before {
-    content: '';
-    position: absolute;
-    left: -16.5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    background: var(--lightpurple);
-    border: 3px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--lightpurple);
-    z-index: 2;
-}
-
-.progress-tracker li.pending::before {
-    content: '';
-    position: absolute;
-    left: -16.5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    background: #ddd;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #ddd;
-    z-index: 2;
-}
-
-.header-container{
-    grid-area: heading;
-}
-
-.header-container h1{
-    text-align: center;
-    padding: 30px;
-}
-
-
-/* saved-trip container */
-
-.saved-trip-container{
-    display: none;
-    grid-area: trip;
-    background-color: white;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 50px 
-}
-.trip-container {
-    grid-area: trip;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-.subheading-container {
-    display: flex;
-    justify-content: flex-start;
-    padding: 60px;
-    padding-left: 0;
-}
-
-.subheading-container h2 {
-    font-size: 2.3em;
-    padding-bottom: 20px;
-    border-bottom: 3px solid var(--lightpurple);
-    color: var(--purple);
-    margin-top: -10px;
-}
-
-.buttons-container {
-    display: flex;
-    margin-top: -25px;
-    width: 100%;
-    gap: 20px;
-}
-
-.buttons-container button {
-    font-family: 'Soda-Sans';
-    border: none;
-    width: auto;
-    padding: 30px;
-    border-radius: 10px;
-    border: 1.5px solid rgba(0, 0, 0, 0.2);
-    background-color: transparent;
-    font-size: 20px;
-    flex: 1;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.buttons-container button:hover {
-    border-color: #000;
-}
-
-.add-new {
-    margin-right: 20px;
-}
-
-.icon {
-    font-size: 25px;
-}
-
-.trip-list {
-    list-style-type: none; /* Remove bullet points from the list */
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.trip-card {
-    display: flex;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    height: 200px; /* Control the height to achieve the rectangle shape */
-    margin-top: 20px;
-    overflow: hidden;
-    border: 1.5px solid rgba(0, 0, 0, 0.2);
-}
-
-.trip-image {
-    border-right: 2px solid var(--lightpurple);
-    width: 40%;
-}
-
-.trip-image img {
-    width: 100%; /* Image takes half the card width */
-    height: 100%; /* Ensure image covers the full height */
-    object-fit: cover; /* Ensures no distortion */
-}
-
-.trip-content {
-    margin-left: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: auto; 
-}
-
-.trip-content h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.trip-content p {
-    margin: 5px 0;
-    color: #555;
-    font-size: 1rem;
-}
-
-.trip-content a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.trip-content a:hover {
-    text-decoration: underline;
-}
-
-.trip-content ion-icon{
-    font-size: 30px;
-}
-
-.center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Adjust the gap as needed */
-}
-
-.center-content span {
-    display: flex;
-    align-items: center;
-}
-
-.text {
-    font-weight: bold;
-    margin-left: 9px; /* Adjust the margin as needed */
-}
-
-.text1{
-    font-weight: bold;
-    margin-left: 4px;
-}
-
-.icon-stuff {
-    text-align: center;
-}
-
-.trip-card-options{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    gap: 15px;
-}
-
-.option-icon{
-    font-size: 25px;
-}
-
-.option-icon:hover {
-    transform: scale(1.1);
-    transition: all 0.2s;
-}
 /* New Trip Section CSS */
 
 .new-trip-container{
@@ -611,63 +315,72 @@ main-container legend{
 
 
 
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "navbar"
+            "sidebar"
+            "new";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .navbar-container {
+        padding: 15px;
+    }
+
+    .navbar-container .navbar-left,
+    .navbar-container .navbar-right {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-links, .nav-links2 {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links a, .nav-links2 a {
+        padding: 0.5rem 1rem;
+    }
+
+    .button {
+        margin: 10px 0;
+    }
+
+    .sign-up {
+        margin-left: 0;
+    }
+
+    .sidebar-section {
+        padding: 1.5rem;
+    }
+
+    .new-trip-container {
+        grid-template-areas: 
+            "header"
+            "try"
+            "save";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr;
+    }
+
+    .trip-heading {
+        display: none;
+    }
 
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--purple);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    width: 50%;
-    text-align: center;
+
+    .new-trip-container button {
+        width: 80%;
+    }
+
+    .new-trip-container .icon {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    .new-trip-container span {
+        font-size: 16px;
+    }
 }
-
-.modal-content {
-    text-align: center;
-}
-
-.modal .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--lightpurple);
-    border: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.modal .close-button:hover {
-    background: var(--blue);
-}
-
-.modal button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: var(--orange);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.modal button:hover {
-    background: var(--blue);
-}
-
-.hidden {
-    display: none;
-}
-

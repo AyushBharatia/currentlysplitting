@@ -53,6 +53,12 @@ body{
     padding-left: 50px;
 }
 
+.navbar-left img {
+    max-height: 50px; 
+    width: auto; 
+    margin-right: 10px;
+}
+
 .navbar-container .navbar-right{
     grid-area: right;
     display: flex;
@@ -64,6 +70,10 @@ body{
 .nav-links, .nav-links2{
     list-style-type: none;
     display: flex;
+}
+
+.navbar-left .nav-links a:hover, .user a:hover{
+    color: #6A37FF;
 }
 
 .nav-links a, .nav-links2 a{
@@ -80,6 +90,16 @@ body{
     text-transform: capitalize;
 }
 
+
+.navbar-left .nav-links a:hover, .user a:hover{
+    color: #6A37FF;
+}
+
+.button:hover {
+    background-color: #4f15fc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
 
 .button{
     display: inline-block;
@@ -118,6 +138,9 @@ body{
     margin-right: 5px;
 }
 
+.mobile-menu-toggle{
+    display: none;
+}
 /* Sidebar Section CSS */
 
 .sidebar-section{
@@ -480,3 +503,107 @@ body{
 
 
 
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "navbar"
+            "sidebar"
+            "trip";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .navbar-container {
+        padding: 15px;
+    }
+
+    .navbar-left {
+        width: 100%;
+        justify-content: space-between;
+        padding-left: 15px;
+    }
+
+    .navbar-right {
+        display: none; /* Hide the default navbar-right */
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px; /* Adjust based on your navbar height */
+        left: 0;
+        width: 100%;
+        background-color: var(--purple);
+        display: none;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        display: block;
+    }
+
+    .button {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    .sidebar-section {
+        order: 3;
+    }
+
+    .saved-trip-container {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+
+    .buttons-container button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .trip-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .trip-image {
+        width: 100%;
+        height: 150px;
+        border-right: none;
+        border-bottom: 2px solid var(--lightpurple);
+    }
+
+    .trip-content {
+        width: 100%;
+        padding: 15px;
+    }
+}

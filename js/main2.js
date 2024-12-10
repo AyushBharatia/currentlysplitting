@@ -165,6 +165,16 @@ const displayTripSuggestions = (suggestions) => {
         .join("");
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuIcon.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
     // Set up listeners for the login/registration form
     setUpListeners();
@@ -176,7 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchTripSuggestions(); 
 
-
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('.mobile-buttons').classList.toggle('active');
+    });
 
     // Update username on home page
     updateUsernameOnHomePage();

@@ -37,7 +37,7 @@ body{
 
 /* NAVBAR CONTAINER ==============================================================*/
 
-.navbar-container{
+.navbar-container {
     position: fixed;
     width: 100%;
     top: 0;
@@ -53,21 +53,64 @@ body{
     border-bottom: 2.5px solid #6A37FF;
 }
 
-.navbar-left{
+.navbar-left {
     grid-area: left;
     display: flex;
     align-items: center;
 }
 
-.navbar-right{
+.navbar-right {
+    grid-area: right;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
-.nav-links{
-    list-style-type: none;
+.nav-links {
     display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+
+.navbar-left img {
+    max-height: 50px; 
+    width: auto; 
+    margin-right: 10px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.desktop-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-links li {
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 40px; 
+}
+
+.button a {
+    padding: 8px 16px;
+    background-color: var(--lightpurple);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.mobile-buttons, .menu-icon {
+    display: none;
+}
+
+
 
 .nav-links a{
     color: #fff;
@@ -84,6 +127,7 @@ body{
     border: 2px solid var(--lightpurple);
     border-radius: 50px;
     transition: all 0.3 ease;
+    overflow: hidden;
     
 }
 
@@ -121,6 +165,13 @@ body{
     color: var(--lightpurple);
 }
 
+.mobile-buttons{
+    display: none;
+}
+
+.menu-icon{
+    display:none
+}
 
 /* BANNER CONTAINER */
 
@@ -425,3 +476,158 @@ body{
     color: var(--lightpurple);
     margin: 4px 0;
 }
+
+
+/* Mobile Styling */
+@media screen and (max-width: 768px) {
+    /* NAVBAR CONTAINER */
+    .navbar-container {
+        padding: 20px;
+        grid-template-areas: "left right";
+        grid-template-columns: 1fr auto;
+    }
+
+    .navbar-left .nav-links {
+        display: none;
+    }
+
+    .navbar-right .button {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .mobile-buttons {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--purple);
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    .mobile-buttons.active {
+        display: flex;
+    }
+
+    .mobile-buttons a {
+        color: white;
+        padding: 10px 0;
+        text-decoration: none;
+    }
+
+    /* BANNER CONTAINER */
+    .banner-container {
+        margin-top: 80px;
+    }
+
+    .hero-banner {
+        height: 40vh;
+    }
+
+    .banner-container h1 {
+        font-size: 2rem;
+    }
+
+    .banner-container p {
+        font-size: 1rem;
+    }
+
+    /* FEATURE CONTAINER */
+    .key-feature-container {
+        padding: 0 20px;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        width: 100%;
+    }
+
+    /* USE-CASE CONTAINER */
+    .use-case-container {
+        padding: 40px 20px;
+    }
+
+    .use-case-highlight {
+        flex-direction: column;
+    }
+
+    .use-case-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .use-case-text h2 {
+        font-size: 2rem;
+    }
+
+    .use-case-text p {
+        font-size: 18px;
+    }
+
+    /* FOOTER CONTAINER */
+    .footer-container {
+        grid-template-areas: 
+            "left"
+            "right";
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    /* SUGGESTED TRIPS */
+    #suggested-trips-container {
+        padding: 20px 10px;
+    }
+
+    #suggested-trips {
+        flex-direction: column;
+    }
+
+    .suggestion-card {
+        max-width: 100%;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .navbar-container {
+        padding: 15px;
+    }
+
+    .banner-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-container p {
+        font-size: 0.9rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .use-case-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .use-case-text p {
+        font-size: 16px;
+    }
+}
+
