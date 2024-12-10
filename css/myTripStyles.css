@@ -86,7 +86,7 @@ body{
     transition: transform 0.2 ease;
 }
 
-.nav-links2 a{
+.nav-links2 a, .user a{
     text-transform: capitalize;
 }
 
