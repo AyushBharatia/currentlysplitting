@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=neurology" />
+    <link rel="stylesheet" href="../css/myTripStyles.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar-container">
+        <!-- Left Side Of Navbar -->
+         <div class="navbar-left">
+            <a href="#" class="logo"><img src="images/logo.png"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="planner.html">Trips</a></li>
+            </ul>
+         </div>
+         <!-- Right Side of Navbar -->
+         <div class="navbar-right">
+            <ul class="nav-links2">
+                <li class="user"><a href ="#"><i class="material-icons">person</i>Guest</a></li>
+                <li class="login button"><a href="registration.html">Login</a></li>
+                <li class="sign-up button"><a href="registration2.html">Register</a></li>
+            </ul>
+         </div>
+    </div>
+    <!-- ================================================================= --> 
+    <!-- Sidebar Section -->
+    <div class="sidebar-section">
+        <h1>Plan Your Perfect Itinerary</h1>
+        <p>Track your progress as you build your trip!"</p>
+        <ul class="progress-tracker">
+            <li class="completed">Create a trip</li>
+            <li class="completed">Add dates</li>
+            <li class="pending">Add flights</li>
+            <li class="pending">Plan daily itinerary</li>
+            <li class="pending">Confirm bookings</li>
+        </ul>
+    </div>
+    <!-- ================================================================= -->
+    <!-- Saved Trip Section -->
+    <div class="saved-trip-container">
+        <div class="subheading-container">
+            <h2>My Trips</h2>
+        </div>
+        <div class="buttons-container">
+            <button type="button" class="add-new">
+                <span>Add A New Trip</span>
+                <ion-icon name="add-outline" class="icon"></ion-icon>
+            </button>
+            <button type="button" class="share">
+                <span>Import Trip(s)</span>
+                <ion-icon name="cloud-download-outline" class="icon"></ion-icon>
+            </button>
+        </div>
+        <ul class="trip-list">
+        </ul>
+    </div>
+    <!-- ================================================================= -->
+    <!-- Modal for Trip Actions -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-box">
+            <button class="modal-close">&times;</button>
+            <h2>Trip Details</h2>
+            <p id="modal-details">No details available</p>
+            <div class="modal-actions">
+                <button id="modal-confirm" class="modal-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/main5.js"></script>
+    <!-- ================================================================= -->
+</body>
+</html>

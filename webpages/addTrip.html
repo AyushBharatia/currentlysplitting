@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=neurology" />
+    <link rel="stylesheet" href="../css/addTripStyles.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- Sidebar Section -->
+    <div class="sidebar-section">
+        <h1>Plan Your Perfect Itinerary</h1>
+        <p>Use this intuitive itinerary builder to create your personalized travel plan. Start by entering your arrival details, and we'll guide you through planning each day of your trip effortlessly.</p>
+        <div class="note">Important: To ensure your itinerary is personalized, make sure to enter accurate travel dates and details. This will help us create the best possible plan for your trip!</div>
+    </div>
+    <!-- Main Section Area (Asking For New Trip Info)-->
+    <div class="main-container">
+        <div class="main-logo">
+            <h1>TravelWise</h1>
+        </div>
+        <div class="heading">
+            <p>Let's Start with a Name!</p>
+        </div>
+        <div class="question">
+            <p>What would you like to call this trip? Choose a name that captures the excitement or purpose of your journey.</p>
+            <form class="form" id="trip-form">
+                <legend class="legend">Trip Name:</legend>
+                <input type="text" id="dynamic-input" placeholder="E.g., Summer Escape, Work Retreat">
+                <p class="error-message" style="color: red;"></p>
+                <button type="button" class="submit">Next</button>
+            </form>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/main5.js"></script>
+    <!-- ================================================================= -->
+</body>
+</html>

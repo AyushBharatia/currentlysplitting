@@ -1,0 +1,482 @@
+@font-face {
+    font-family: 'Soda-Sans';
+    src: url('../fonts/sodo-sans-8.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --purple: #1f1b3a; /* Dark purple */
+    --blue: #3498db; /* Blue */
+    --orange: #f39c12; /* Vibrant orange */
+    --lightpurple: #6A37FF;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Soda-Sans';
+    display: grid;
+    grid-template-areas: 
+        "navbar navbar navbar"
+        "sidebar trip trip"
+        "sidebar trip trip";
+        grid-template-columns: 0.3fr 1fr 1fr; 
+        grid-template-rows:   0.4fr 1fr 1fr;
+        min-height: 100vh;
+    
+}
+
+
+/* Navbar Section CSS */
+
+.navbar-container{
+    position: relative;
+    z-index: 1000;
+    grid-area: navbar;
+    display: grid;
+    grid-template-areas: 
+    "left left right";
+    grid-template-columns: auto auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #1f1b3a;
+    padding: 30px;
+}
+
+.navbar-container .navbar-left{
+    grid-area: left;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.navbar-container .navbar-right{
+    grid-area: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.nav-links, .nav-links2{
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links a, .nav-links2 a{
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.2 ease;
+}
+
+.nav-links2 a{
+    text-transform: capitalize;
+}
+
+
+.button{
+    display: inline-block;
+    border: 2px solid var(--lightpurple);
+    border-radius: 50px;
+    transition: all 0.3 ease;
+    
+}
+
+.button a{
+    text-transform: capitalize;
+}
+
+.login{
+    background-color: var(--lightpurple);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.sign-up{
+    margin-left: 15px;
+}
+
+.nav-links a:hover, .user a:hover {
+    transform: translateY(-1px); 
+    background-color: var(--accent-color);
+    border-radius: 50px;
+}
+
+.user a{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.user a i{
+    margin-right: 5px;
+}
+
+/* Sidebar Section CSS */
+
+.sidebar-section{
+    position: relative;
+    grid-area: sidebar;
+    background-color: #1f1b3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    z-index: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-section h1{
+    color: #6A37FF;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow:rgba(0, 0, 0, 0.6);
+    margin-top: -10px;
+}
+
+.sidebar-section p{
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.progress-tracker {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    padding-left: 20px; /* Space for progress bar */
+}
+
+.progress-tracker::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ddd;
+    z-index: 0;
+    border-radius: 2px;
+}
+
+.progress-tracker li {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    z-index: 1;
+    color: #fff; /* Adjust for readability */
+}
+
+.progress-tracker li.completed::before {
+    content: '';
+    position: absolute;
+    left: -16.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--lightpurple);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--lightpurple);
+    z-index: 2;
+}
+
+.progress-tracker li.pending::before {
+    content: '';
+    position: absolute;
+    left: -16.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ddd;
+    z-index: 2;
+}
+
+.header-container{
+    grid-area: heading;
+}
+
+.header-container h1{
+    text-align: center;
+    padding: 30px;
+}
+
+
+/* saved-trip container */
+
+.saved-trip-container{
+    grid-area: trip;
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px 
+}
+.trip-container {
+    grid-area: trip;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.subheading-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 60px;
+    padding-left: 0;
+}
+
+.subheading-container h2 {
+    font-size: 2.3em;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--lightpurple);
+    color: var(--purple);
+    margin-top: -10px;
+}
+
+.buttons-container {
+    display: flex;
+    margin-top: -25px;
+    width: 100%;
+    gap: 20px;
+}
+
+.buttons-container button {
+    font-family: 'Soda-Sans';
+    border: none;
+    width: auto;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    font-size: 20px;
+    flex: 1;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttons-container button:hover {
+    border-color: #000;
+}
+
+.add-new {
+    margin-right: 20px;
+}
+
+.icon {
+    font-size: 25px;
+}
+
+.trip-list {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.trip-card {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 200px; /* Control the height to achieve the rectangle shape */
+    margin-top: 20px;
+    overflow: hidden;
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.trip-image {
+    border-right: 2px solid var(--lightpurple);
+    width: 40%;
+}
+
+.trip-image img {
+    width: 100%; /* Image takes half the card width */
+    height: 100%; /* Ensure image covers the full height */
+    object-fit: cover; /* Ensures no distortion */
+}
+
+.trip-content {
+    margin-left: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto; 
+}
+
+.trip-content h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.trip-content p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.trip-content a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.trip-content a:hover {
+    text-decoration: underline;
+}
+
+.trip-content ion-icon{
+    font-size: 30px;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust the gap as needed */
+}
+
+.center-content span {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    font-weight: bold;
+    margin-left: 9px; /* Adjust the margin as needed */
+}
+
+.text1{
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.icon-stuff {
+    text-align: center;
+}
+
+.trip-card-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 15px;
+}
+
+.option-icon{
+    font-size: 25px;
+}
+
+.option-icon:hover {
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay for better contrast */
+    z-index: 9999;
+}
+
+.modal.hidden{
+    display: none;
+}
+.modal-box {
+    background: var(--purple);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: scaleUp 0.3s ease;
+}
+
+.modal-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+.modal-box p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--lightpurple)
+}
+
+.modal-close {
+    font-family: 'Soda-Sans';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background-color: var(--lightpurple);
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--orange);
+}
+
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-btn {
+    font-family: 'Soda-Sans';
+    display: inline-block;
+    border-radius: 50px;
+    background-color: var(--lightpurple);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    color: var(--orange);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
